@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body class="app">
+    <header class="app-header">
+        <h1 class="title">Accessibility & flexbox</h1>
+        <nav class="app-navigation">
+            <ul>
+                <li><a href="#demo-form">Accessibility with form demo</a></li>
+                <li><a href="#demo-card">flexbox responsive demo</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="app-content">
+        <h1 id="demo-form">form with Accessibility</h1>
+        <section class="app-panel">
+            <!-- Hidden area which will be used by aria-labeledby and aria-describedby -->
+            <span class="hidden" id="name-limitation"> should have minimum 5 characters </span>
+            <span class="hidden" id="pass-limitation">
+                Password must be at least 5 characters in length
+                Password must not match any previous password.
+                Password must contain atleast 1 number & 1 Uppercase letter & 1 alphanumeric character.
+            </span>
+            <form onsubmit="return false;">
+
+                <!-- Its used to group form fields like radio / check box / some of related form input -->
+                <!--   <fieldset>
+                    <legend>Demo form</legend> -->
+
+                <!-- Applying label for with aria-desribedby -->
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control" type="text" id="username" name="username"
+                        aria-describedby="name-limitation" />
+                    <span aria-live="polite" aria-atomic="true">
+                        <p class="validation-message">please enter valid name</p>
+                    </span>
+                </div>
+
+                <!-- Applying label with for attribute -->
+                <div class="form-group">
+                    <label class="form-label" for="email">Email *</label>
+                    <input class="form-control" type="email" id="email" name="email" required />
+                    <span aria-live="polite" aria-atomic="true">
+                        <p class="validation-message">please enter your email</p>
+                    </span>
+                </div>
+
+                <!-- Applying label with multiple form control using aria-labeledby -->
+                <div class="form-group inline">
+                    <label class="form-label" id="gender-lbl">Gender</label>
+                    <label>
+                        <input class="form-control" type="radio" name="gender" value="male"
+                            aria-labelledby="gender-lbl" /> Male
+                    </label>
+                    <label>
+                        <input class="form-control" type="radio" name="gender" value="female"
+                            aria-labelledby="gender-lbl" /> Female
+                    </label>
+
+                    <span aria-live="polite" aria-atomic="true">
+                        <p class="validation-message">please select required field.</p>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="department" id="department-lbl">Department</label>
+                    <select id="department" name="department" class="form-control">
+                        <option value="" selected>--- select ---</option>
+                        <option value=" xt-mobile">XT - mobile</option>
+                        <option value="xt-web">XT - web</option>
+                    </select>
+                    <span aria-live="polite" aria-atomic="true">
+                        <p class="validation-message">please select any of the option listed</p>
+                    </span>
+                </div>
+
+                <!-- Applying label for with aria-describedby -->
+                <div class="form-group">
+                    <label class="form-label" for="password">Password *</label>
+                    <input class="form-control" type="password" id="password" name="password"
+                        aria-describedby="pass-limitation" required />
+                    <span aria-live="polite" aria-atomic="true">
+                        <p class="validation-message">please enter valid password</p>
+                    </span>
+                </div>
+
+                <!-- Applying aria-label with aria-describedBy to add more desrcptive text with label -->
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <input class="form-control" type="password" name="confirmpassword" required
+                        aria-label="Please enter password again to confirm" aria-describedby="pass-limitation" />
+
+                    <span aria-live="polite" aria-atomic="true">
+                        <p class="validation-message">password mismatch</p>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn">Sign up</button>
+                </div>
+                <!-- </fieldset> -->
+            </form>
+        </section>
+        <h1 id="demo-card">flexbox responsive design</h1>
+        <section class="card-container">
+
+            <article class="card fixed-size">
+                <h2 tabindex="0">welcome</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the
+                    industry's standard dummy text ever since the 1500s,
+                </p>
+                <button class="btn">view more</button>
+            </article>
+            <article class="card fixed-size">
+                <h2 tabindex="0">welcome</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the
+                    industry's standard dummy text ever since the 1500s,
+                </p>
+                <button class="btn">view more</button>
+            </article>
+            <article class="card fixed-size">
+                <h2 tabindex="0">welcome</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the
+                    industry's standard dummy text ever since the 1500s,
+                </p>
+                <button class="btn">view more</button>
+            </article>
+            <article class="card fixed-size">
+                <h2 tabindex="0">welcome</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the
+                    industry's standard dummy text ever since the 1500s,
+                </p>
+                <button class="btn">view more</button>
+            </article>
+            <article class="card fixed-size">
+                <h2 tabindex="0">welcome</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the
+                    industry's standard dummy text ever since the 1500s,
+                </p>
+                <button class="btn">view more</button>
+            </article>
+            <article class="card fixed-size">
+                <h2 tabindex="0">welcome</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the
+                    industry's standard dummy text ever since the 1500s,
+                </p>
+                <button class="btn">view more</button>
+            </article>
+        </section>
+
+    </main>
+</body>
+
+</html>

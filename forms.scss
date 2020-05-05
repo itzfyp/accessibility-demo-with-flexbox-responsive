@@ -1,4 +1,5 @@
-.form-group {
+.form-group,
+fieldset {
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -9,7 +10,8 @@
     flex-wrap: wrap;
 }
 
-.inline .form-label {
+.inline .form-label,
+.inline fieldset {
     flex:1 0 100%;
 }
 
